@@ -1,0 +1,13 @@
+# the original overlay: downloaded by linux/fetch_frontend.py, never committed (it belongs to its authors)
+frontend/
+frontend.old/
+re/prometheus-overlay.exe
+*.exe
+# reverse-engineering scratch output
+re/dis.txt
+re/strings*.txt
+re/fn_*.asm
+# local tooling
+.mcp.json
+.playwright-mcp/
+__pycache__/
