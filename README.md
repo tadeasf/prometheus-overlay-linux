@@ -69,8 +69,8 @@ keyring.
 ## Hotkeys
 
 The overlay's own hotkeys from its settings: F8 edit mode, F9 hide, F5 Hub, F3 wheel, F2 companion panel, F10 / Shift+F10
-zoom, F11 big map, and so on. Changed keys apply right away. Voice push-to-talk: Mouse4 / Mouse5 (set in the voice settings
-by name, e.g. `Mouse4`). Without `/dev/input` access you can bind keys in your compositor to
+zoom, F11 big map, and so on. Changed keys apply right away. Voice push-to-talk keys (Mouse4 / Mouse5) are read too, but see
+the voice chat note below. Without `/dev/input` access you can bind keys in your compositor to
 `linux/prometheus_overlay.py hotkey <action>` instead.
 
 ## Settings and troubleshooting
@@ -83,7 +83,11 @@ by name, e.g. `Mouse4`). Without `/dev/input` access you can bind keys in your c
 
 ## Not ported (yet)
 
-Discord presence, the OBS stream page, the "press a key" capture in the push-to-talk setting, the admin window, in-app
+**Voice chat** does not work on Fedora: its WebKitGTK is built without WebRTC (`RTCPeerConnection` does not exist), which the
+overlay's voice chat (LiveKit) needs. Microphone access itself works. Distros whose WebKitGTK 6.0 has WebRTC enabled may work,
+untested.
+
+Also: Discord presence, the OBS stream page, the "press a key" capture in the push-to-talk setting, the admin window, in-app
 updates (re-run `fetch_frontend.py`).
 
 ## License
